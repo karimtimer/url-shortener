@@ -1,0 +1,20 @@
+require: rubocop-rails
+
+Style/Documentation:
+  Enabled: false
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'spec/rails_helper.rb'
+    - 'tmp/**/*'
+    - 'bin/**/*'
+
+Rails:
+  Enabled: true
