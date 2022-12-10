@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UrlShortener
+class Shortener
   class << self
     def call(long_url:)
       url =  Url.find_by(long_url:)

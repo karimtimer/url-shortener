@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe UrlShortener do
+RSpec.describe Shortener do
   describe '.call' do
     subject { described_class.call(long_url:) }
 

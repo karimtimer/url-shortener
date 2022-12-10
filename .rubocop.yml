@@ -15,6 +15,7 @@ AllCops:
     - 'spec/rails_helper.rb'
     - 'tmp/**/*'
     - 'bin/**/*'
+    - 'lib/tasks/fly.rake'
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
