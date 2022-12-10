@@ -12,16 +12,11 @@
   <% end %>
 
   <div>
-    <%= form.label :long_url, style: "display: block" %>
+    <%= form.label :url_to_shorten, style: "display: block" %>
     <%= form.text_field :long_url %>
   </div>
 
   <div>
-    <%= form.label :short_url, style: "display: block" %>
-    <%= form.text_field :short_url %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Shorten URL" %>
   </div>
 <% end %>
