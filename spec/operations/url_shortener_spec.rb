@@ -24,11 +24,10 @@ RSpec.describe UrlShortener do
 
     context 'given long_url is a valid url' do
       let(:long_url) { 'https://example.com/' }
-      let(:short_url) { 'shrt' }
 
       context 'when the long_url has been shortened' do
         before do
-          FactoryBot.create(:url, long_url:, short_url:)
+          FactoryBot.create(:url, long_url:)
         end
 
         it 'returns true for successful' do
@@ -41,7 +40,7 @@ RSpec.describe UrlShortener do
 
         it 'returns a url object with both a long_url and a short_url' do
           expect(subject[:url].long_url).to eq long_url
-          expect(subject[:url].short_url).to eq short_url
+          expect(subject[:url].short_url.length).to eq 7
         end
       end
 
@@ -56,7 +55,7 @@ RSpec.describe UrlShortener do
 
         it 'returns a url object with both a long_url and a short_url' do
           expect(subject[:url].long_url).to eq long_url
-          expect(subject[:url].short_url).to eq short_url
+          expect(subject[:url].short_url.length).to eq 7
         end
       end
     end

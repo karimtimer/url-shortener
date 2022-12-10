@@ -18,7 +18,11 @@ class UrlShortener
     private
 
     def create_url(long_url)
-      Url.create(long_url:, short_url: 'shrt')
+      Url.create(
+        long_url:,
+        # there is a 1:16^7 chance of getting a duplicate. Low enough for this proejct!
+        short_url: SecureRandom.hex.first(7)
+      )
     end
   end
 end

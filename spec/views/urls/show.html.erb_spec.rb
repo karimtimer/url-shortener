@@ -4,12 +4,13 @@ require 'rails_helper'
 
 RSpec.describe 'urls/show', type: :view do
   before(:each) do
-    assign(:url, FactoryBot.create(:url))
+    assign(:url, url)
   end
+  let(:url) { FactoryBot.create(:url) }
 
   it 'renders attributes in <p>' do
     render
     expect(rendered).to match(%r{https://example.com/})
-    expect(rendered).to match(/shrt/)
+    expect(rendered).to match(/#{url.short_url}/)
   end
 end
