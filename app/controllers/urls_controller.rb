@@ -21,15 +21,16 @@ class UrlsController < ApplicationController
 
   # POST /urls or /urls.json
   def create
-    @url = Url.new(url_params)
+    shorten_url_operation = UrlShortener.call(long_url: url_params[:long_url])
 
     respond_to do |format|
-      if @url.save
+      if shorten_url_operation[:success] == true
+        @url = shorten_url_operation[:url]
         format.html { redirect_to url_url(@url), notice: 'Url was successfully created.' }
         format.json { render :show, status: :created, location: @url }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
+        format.json { render json: shorten_url_operation[:errors], status: :unprocessable_entity }
       end
     end
   end
@@ -55,6 +56,10 @@ class UrlsController < ApplicationController
       format.html { redirect_to urls_url, notice: 'Url was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def redirect
+    redirect_to Url.find_by(short_url: params[:id]).long_url, status: :found, allow_other_host: true
   end
 
   private

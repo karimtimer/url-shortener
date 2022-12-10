@@ -21,5 +21,7 @@ Metrics/BlockLength:
 Rails/I18nLocaleTexts:
   Exclude:
     - 'app/controllers/urls_controller.rb'
+Metrics/MethodLength:
+  Max: 20
 Rails:
   Enabled: true
