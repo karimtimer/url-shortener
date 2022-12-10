@@ -15,6 +15,11 @@ AllCops:
     - 'spec/rails_helper.rb'
     - 'tmp/**/*'
     - 'bin/**/*'
-
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+Rails/I18nLocaleTexts:
+  Exclude:
+    - 'app/controllers/urls_controller.rb'
 Rails:
   Enabled: true
