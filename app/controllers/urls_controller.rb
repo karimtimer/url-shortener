@@ -21,7 +21,7 @@ class UrlsController < ApplicationController
 
   # POST /urls or /urls.json
   def create
-    shorten_url_operation = UrlShortener.call(long_url: url_params[:long_url])
+    shorten_url_operation = Shortener.call(long_url: url_params[:long_url])
 
     respond_to do |format|
       if shorten_url_operation[:success] == true
