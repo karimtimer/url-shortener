@@ -2,10 +2,9 @@
 
 require 'rails_helper'
 
-RSpec.describe URLShortner do
-
+RSpec.describe UrlShortner do
   describe '.call' do
-    subject { URLShortner.call(long_url: long_url) }
+    subject { UrlShortner.call(long_url:) }
 
     context 'given long_url is not a valid url' do
       let(:long_url) { 'foo' }

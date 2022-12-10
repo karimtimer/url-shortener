@@ -19,8 +19,6 @@ RSpec.describe 'urls/edit', type: :view do
 
     assert_select 'form[action=?][method=?]', url_path(url), 'post' do
       assert_select 'input[name=?]', 'url[long_url]'
-
-      assert_select 'input[name=?]', 'url[short_url]'
     end
   end
 end

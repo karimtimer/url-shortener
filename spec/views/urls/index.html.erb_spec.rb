@@ -6,12 +6,12 @@ RSpec.describe 'urls/index', type: :view do
   before(:each) do
     assign(:urls, [
              Url.create!(
-               long_url: 'Long Url',
-               short_url: 'Short Url'
+               long_url: 'Long Url 1',
+               short_url: 'Short Url 1'
              ),
              Url.create!(
-               long_url: 'Long Url',
-               short_url: 'Short Url'
+               long_url: 'Long Url 2',
+               short_url: 'Short Url 2'
              )
            ])
   end
