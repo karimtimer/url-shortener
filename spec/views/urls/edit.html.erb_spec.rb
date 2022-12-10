@@ -3,12 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'urls/edit', type: :view do
-  let(:url) do
-    Url.create!(
-      long_url: 'MyString',
-      short_url: 'MyString'
-    )
-  end
+  let(:url) { FactoryBot.create(:url) }
 
   before(:each) do
     assign(:url, url)

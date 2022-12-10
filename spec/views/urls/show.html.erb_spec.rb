@@ -4,15 +4,12 @@ require 'rails_helper'
 
 RSpec.describe 'urls/show', type: :view do
   before(:each) do
-    assign(:url, Url.create!(
-                   long_url: 'Long Url',
-                   short_url: 'Short Url'
-                 ))
+    assign(:url, FactoryBot.create(:url))
   end
 
   it 'renders attributes in <p>' do
     render
-    expect(rendered).to match(/Long Url/)
-    expect(rendered).to match(/Short Url/)
+    expect(rendered).to match(%r{https://example.com/})
+    expect(rendered).to match(/shrt/)
   end
 end

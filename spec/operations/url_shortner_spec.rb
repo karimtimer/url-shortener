@@ -15,9 +15,13 @@ RSpec.describe UrlShortner do
     end
 
     context 'given long_url is a valid url' do
-      let(:long_url) { 'https://example.com/' }
+      let(:long_url) { 'tps://example.com/' }
 
       context 'when the long_url has been shortened' do
+        before do
+          FactoryBot.create(:url)
+        end
+
         it 'returns true for successful'
         it 'does not create a new url object'
         it 'returns a url object with both a long_url and a short_url'
