@@ -1,12 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Url Shortnering Service</h1>
+<h1>Url Shortening Service</h1>
+
+<% if @urls.size > 1 %>
+  <h2>URL's shortened so far:</h2>
+<% end %>
 
 <div id="urls">
   <% @urls.each do |url| %>
     <%= render url %>
     <p>
-      <%= link_to "Show this url", url %>
+      <%= link_to "view more info on this URL", url %>
     </p>
   <% end %>
 </div>

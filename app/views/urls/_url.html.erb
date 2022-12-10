@@ -6,7 +6,7 @@
 
   <p>
     <strong>Short url:</strong>
-    <%= url.short_url %>
+    <%= link_to "#{ request.env['HTTP_HOST']}/#{url.short_url}", "/#{url.short_url}" %>
   </p>
 
 </div>
