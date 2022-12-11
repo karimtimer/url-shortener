@@ -1,7 +1,6 @@
 # README
 
-Demo: https://timers-url-shortener.fly.dev/urls
-
+Demo: https://timers-url-shortener.fly.dev
 About thie App:
 
 * Ruby version
