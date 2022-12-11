@@ -59,7 +59,13 @@ class UrlsController < ApplicationController
   end
 
   def redirect
-    redirect_to Url.find_by(short_url: params[:id]).long_url, status: :found, allow_other_host: true
+    @url = Url.find_by(short_url: params[:id])
+
+    if @url.nil?
+      redirect_to urls_path, notice: 'short URL Not Found.'
+    else
+      redirect_to @url.long_url, status: :found, allow_other_host: true
+    end
   end
 
   private
